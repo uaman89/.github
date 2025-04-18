@@ -13,5 +13,5 @@ updates:
           - "*"
       nice-to-have:
         patterns:
-          - "@angular/*"
+          - "@ngrx/*"
         applies-to: version-updates
