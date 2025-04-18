@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@angular/core": "10.0",
-    "lodash": "^4.17.21"
+    "@angular/core": "18.0",
+    "lodash": "4.17.20"
   }
 }
