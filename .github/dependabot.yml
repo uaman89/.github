@@ -11,3 +11,7 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
+      nice-to-have:
+        patterns:
+          - "@angular/*"
+        applies-to: version-updates
