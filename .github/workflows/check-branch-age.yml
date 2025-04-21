@@ -9,7 +9,7 @@ jobs:
   check-branch-age:
     runs-on: ubuntu-latest
     env:
-      max-days: 14  # Set your max branch age in days here
+      max-days: 1  # Set your max branch age in days here
 
     steps:
       - name: Checkout code
