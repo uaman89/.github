@@ -5,7 +5,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 2 # disables version update PRs
+    open-pull-requests-limit: 1 # disables version update PRs
     groups:
       security-updates:
         applies-to: security-updates
