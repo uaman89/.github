@@ -1,9 +1,12 @@
 name: Check Branch Age
 
 on:
-  push:
+  #push:
+  #  branches:
+  #    - '**'  # Triggers on push to any branch
+  pull_request:
     branches:
-      - '**'  # Triggers on push to any branch
+      - main  # or your default branch
 
 jobs:
   check-branch-age:
