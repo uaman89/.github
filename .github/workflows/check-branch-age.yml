@@ -21,6 +21,17 @@ jobs:
         run: |
           git fetch origin main
 
+      - name: Old Age Check
+        run: |
+          branch_creation_date=$(git log --reverse --format=%aI $(git merge-base HEAD origin/main)..HEAD | head -n 1)
+          current_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          branch_age=$(( ($(date -d $current_date +%s) - $(date -d $branch_creation_date +%s)) / 86400 ))
+
+          if [ "$branch_age" -gt "${{ env.max-days }}" ]; then
+            echo "Branch is too old: $branch_age days (maximum allowed is ${{ env.max-days }} days)"
+            exit 1
+          fi     
+
       - name: Check branch age
         run: |
           BRANCH_NAME="${{ github.head_ref }}"
