@@ -1,0 +1,52 @@
+# .github/workflows/check-branch-age.yml
+
+name: Check Branch Age
+
+on:
+  workflow_call:
+    inputs:
+      max-days:
+        type: number
+        required: false
+        default: 14  # ✅ fallback value if not passed
+
+jobs:
+  check-age:
+    runs-on: ubuntu-latest
+
+    env:
+      MAX_DAYS: ${{ inputs.max-days }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # required for full history
+
+      - name: Fetch main branch
+        run: git fetch origin main
+
+      - name: Check branch age
+        run: |
+          echo "Using max allowed age: $MAX_DAYS"
+
+          BRANCH_POINT=$(git merge-base HEAD origin/main)
+          branch_creation_date=$(git log --reverse --format=%aI $BRANCH_POINT..HEAD | head -n 1)
+
+          if [ -z "$branch_creation_date" ]; then
+            echo "⚠️ Could not determine branch creation date"
+            exit 1
+          fi
+
+          current_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          branch_age=$(( ($(date -u -d "$current_date" +%s) - $(date -u -d "$branch_creation_date" +%s)) / 86400 ))
+
+          echo "Branch creation date: $branch_creation_date"
+          echo "Branch age: $branch_age days"
+
+          if [ "$branch_age" -gt "$MAX_DAYS" ]; then
+            echo "❌ Branch is too old: $branch_age days (max: $MAX_DAYS)"
+            exit 1
+          fi
+
+          echo "✅ Branch age is acceptable"
