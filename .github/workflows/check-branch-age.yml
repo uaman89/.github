@@ -7,4 +7,4 @@ on:
 
 jobs:
   call-branch-age-check:
-    uses: uaman89/.github/.github/workflows/check-branch-age.yml@main
+    uses: uaman89/.github/.github/workflow-templates/check-branch-age.yml@main
