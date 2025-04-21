@@ -9,12 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@angular/animations": "6.0.0",
-    "@angular/cli": "6.0",
+    "@angular/animations": "19.2.7",
+    "@angular/cli": "19.2",
     "@angular/compiler": "6.0.0",
-    "@angular/core": "6.0.0",
-    "@angular/forms": "6.0.0",
-    "lodash": "3.0.0",
+    "@angular/core": "19.2.7",
+    "@angular/forms": "19.2.7",
+    "lodash": "4.17.21",
     "@ngrx/effects": "18.0.0",
     "@ngrx/operators": "19.1.0",
     "@ngrx/signals": "19.1.0"
