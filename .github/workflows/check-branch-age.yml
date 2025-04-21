@@ -33,6 +33,7 @@ jobs:
           echo "Branch creation date: $branch_creation_date"
           echo "Current date: $current_date"
           echo "Branch age (in days): $branch_age"
+          echo "env.max-days (in days): env.max-days
 
           if [ "$branch_age" -gt "${{ env.max-days }}" ]; then
             echo "❌ Branch is too old: $branch_age days (maximum allowed is ${{ env.max-days }} days)"
