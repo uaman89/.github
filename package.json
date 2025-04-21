@@ -15,8 +15,8 @@
     "@angular/core": "6.0.0",
     "@angular/forms": "6.0.0",
     "lodash": "3.0.0",
-    "@ngrx/effects": "17.0.0",
-    "@ngrx/operators": "17.0.0",
-    "@ngrx/signals": "17.0.0"
+    "@ngrx/effects": "19.1.0",
+    "@ngrx/operators": "19.1.0",
+    "@ngrx/signals": "19.1.0"
   }
 }
