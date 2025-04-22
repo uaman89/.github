@@ -19,6 +19,8 @@ runs:
         git fetch origin main 
 
     - name: Check branch age
+      id: branch-creation-date
+      shell: bash
       run: |
         BRANCH_NAME="${{ github.head_ref }}"
         echo "Checking branch age for: $BRANCH_NAME"
