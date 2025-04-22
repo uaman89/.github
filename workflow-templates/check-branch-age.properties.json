@@ -1,8 +1,0 @@
-{
-    "name": "check branch age",
-    "description": "prevent merge branches older then 2 days",
-    "iconName": "clock-fill",
-    "categories": [
-        "monitoring"
-    ]
-}
