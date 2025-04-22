@@ -15,6 +15,7 @@ runs:
         fetch-depth: 0  # Needed to access full git history and remote branches
 
     - name: Set up Git
+      shell: bash
       run: |
         git fetch origin main 
 
